@@ -6,14 +6,10 @@ class ActorsController < ApplicationController
 
   def create
     actor = Actor.new(
-      title: params[:title],
-      year: params[:year],
-      description: params[:description],
-      creator: params[:creator],
-      seasons: params[:seasons],
-      network: params[:network],
-      favorite: params[:favorite],
-      user_id: params[:user_id],
+      name: params[:name],
+      age: params[:age],
+      gender: params[:gender],
+      hometown: params[:hometown],
     )
     actor.save
     render json: actor.as_json
@@ -26,14 +22,10 @@ class ActorsController < ApplicationController
 
   def update
     actor = Actor.find_by(id: params[:id])
-    actor.title = params[:title] || actor.title
-    actor.year = params[:year] || actor.year
-    actor.description = params[:description] || actor.description
-    actor.creator = params[:creator] || actor.creator
-    actor.seasons = params[:seasons] || actor.seasons
-    actor.network = params[:network] || actor.network
-    actor.favorite = params[:favorite] || actor.favorite
-    actor.user_id = params[:user_id] || actor.user_id
+    actor.name = params[:name] || actor.name
+    actor.age = params[:age] || actor.age
+    actor.gender = params[:gender] || actor.gender
+    actor.hometown = params[:hometown] || actor.hometown
     actor.save
     render json: show.as_json
   end

@@ -34,6 +34,7 @@ class ShowsController < ApplicationController
     show.network = params[:network] || show.network
     show.favorite = params[:favorite] || show.favorite
     show.user_id = params[:user_id] || show.user_id
+    show.image = params[:image] || show.image
     show.save
     render json: show.as_json
   end
