@@ -1,0 +1,2 @@
+class ActorShow < ApplicationRecord
+end
