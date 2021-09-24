@@ -27,7 +27,7 @@ class ActorsController < ApplicationController
     actor.gender = params[:gender] || actor.gender
     actor.hometown = params[:hometown] || actor.hometown
     actor.save
-    render json: show.as_json
+    render json: actor.as_json
   end
 
   def destroy
