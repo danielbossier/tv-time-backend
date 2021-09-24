@@ -1,7 +1,7 @@
 class ActorsController < ApplicationController
   def index
     actors = Actor.all
-    render json: actors.as_json
+    render json: actors.
   end
 
   def create
@@ -12,12 +12,12 @@ class ActorsController < ApplicationController
       hometown: params[:hometown],
     )
     actor.save
-    render json: actor.as_json
+    render json: actor.
   end
 
   def show
     actor = Actor.find_by(id: params[:id])
-    render json: actor.as_json
+    render json: actor.
   end
 
   def update
@@ -27,7 +27,7 @@ class ActorsController < ApplicationController
     actor.gender = params[:gender] || actor.gender
     actor.hometown = params[:hometown] || actor.hometown
     actor.save
-    render json: actor.as_json
+    render json: actor.
   end
 
   def destroy
