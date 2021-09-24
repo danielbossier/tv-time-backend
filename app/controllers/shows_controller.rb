@@ -15,8 +15,11 @@ class ShowsController < ApplicationController
       favorite: params[:favorite],
       user_id: params[:user_id],
     )
-    show.save
-    render json: show
+    if show.save
+      render json: { message: "Show updated successfully" }, status: :created
+    else
+      render json: { errors: show.errors.full_messages }, status: :bad_request
+    end
   end
 
   def show
