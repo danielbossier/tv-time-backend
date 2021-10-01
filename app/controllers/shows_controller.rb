@@ -14,6 +14,7 @@ class ShowsController < ApplicationController
       network: params[:network],
       favorite: params[:favorite],
       user_id: params[:user_id],
+      image: params[:image],
     )
     if show.save
       render json: { message: "Show updated successfully" }, status: :created
