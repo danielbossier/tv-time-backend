@@ -16,4 +16,16 @@ Rails.application.routes.draw do
   get "/users/:id" => "users#show"
 
   post "/sessions" => "sessions#create"
+
+  get "/show_genres" => "show_genres#index"
+  get "/show_genres/:id" => "show_genres#show"
+  post "/show_genres" => "show_genres#create"
+  patch "/show_genres/:id" => "show_genres#update"
+  delete "/show_genres/:id" => "show_genres#destroy"
+
+  get "/actor_shows" => "actor_shows#index"
+  get "/actor_shows/:id" => "actor_shows#show"
+  post "/actor_shows" => "actor_shows#create"
+  patch "/actor_shows/:id" => "actor_shows#update"
+  delete "/actor_shows/:id" => "actor_shows#destroy"
 end
